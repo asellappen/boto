@@ -9,8 +9,6 @@
 # Script License      : Apache License, Version 2 or later
 #
 # ----------------------------------------------------------------------------
-
-
 language: python
 
 # Some versions of python only work on certain platforms. Specifying the distribution
@@ -82,6 +80,7 @@ before_install:
       exit 1;
     fi
   - sudo apt-get update
+  - sudo apt-get install rustc
   - sudo apt-get --reinstall install -qq language-pack-en language-pack-de
   - sudo apt-get install swig
 
