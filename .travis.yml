@@ -64,12 +64,8 @@ matrix:
       dist: xenial
       python: "3.6"
       arch: ppc64le
-    - os: linux
-      dist: xenial
-      python: "3.7"
-      arch: ppc64le
 
-  allow_failures:
+allow_failures:
     - python: "3.7"
 
 env:
@@ -91,4 +87,4 @@ install:
   - if [[ $TRAVIS_PYTHON_VERSION == 3.3 ]]; then travis_retry pip install -r requirements-py33.txt; fi
   - travis_retry pip install -r requirements.txt
 
-script: python tests/test.py default
+script: travis_wait 30 python tests/test.py default
