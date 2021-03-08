@@ -39,11 +39,9 @@ matrix:
        - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
     # xenial Tests
     - os: linux
-      dist: xenial
+      dist: bicnic
       python: "2.7"
       arch: ppc64le
-      env:
-       - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
     - os: linux
       dist: xenial
       python: "3.5"
@@ -52,14 +50,13 @@ matrix:
       dist: xenial
       python: "3.6"
       arch: ppc64le
+      env:
+       - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
  # bionic Tests
     - os: linux
       dist: bionic
       python: "3.7"
       arch: ppc64le
-
-#allow_failures:
-#    - python: "3.7"
 
 env:
   - BOTO_CONFIG=/tmp/nowhere
