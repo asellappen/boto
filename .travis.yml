@@ -15,10 +15,19 @@ language: python
 # to ensure the version of python will run without issue.
 matrix:
   include:
-    # bionic Tests
+    # Trusty Tests
     - os: linux
-      dist: bionic
-      python: "3.7"
+      dist: trusty
+      python: "pypy"
+    - os: linux
+      dist: trusty
+      python: "2.6"
+    - os: linux
+      dist: trusty
+      python: "3.3"
+    - os: linux
+      dist: trusty
+      python: "3.4"
     # Xenial Tests
     - os: linux
       dist: xenial
@@ -37,6 +46,11 @@ matrix:
       python: "pypy3.5"
       env: 
        - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
+    # bionic Tests
+    - os: linux
+      dist: bionic
+      python: "3.7"
+
     # xenial Tests
     - os: linux
       dist: bicnic
@@ -46,14 +60,14 @@ matrix:
       dist: xenial
       python: "3.5"
       arch: ppc64le
-    - os: linux
-      dist: xenial
-      python: "3.6"
-      arch: ppc64le
- # bionic Tests
+    # bionic Tests
     - os: linux
       dist: bionic
       python: "3.7"
+      arch: ppc64le
+    - os: linux
+      dist: bionic
+      python: "3.6"
       arch: ppc64le
 
 env:
@@ -75,4 +89,4 @@ install:
   - if [[ $TRAVIS_PYTHON_VERSION == 3.3 ]]; then travis_retry pip install -r requirements-py33.txt; fi
   - travis_retry pip install -r requirements.txt
 
-script: travis_wait 30 python tests/test.py default -e test_ssh.py
+script: python tests/test.py default -e test_ssh.py
