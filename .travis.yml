@@ -37,28 +37,29 @@ matrix:
       python: "pypy3.5"
       env: 
        - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
-    # bionic Tests
+    # xenial Tests
     - os: linux
-      dist: bionic
-      python: "3.7"
-      arch: ppc64le
-    - os: linux
-      dist: bionic
+      dist: xenial
       python: "2.7"
       arch: ppc64le
+      env:
+       - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
     - os: linux
       dist: xenial
       python: "3.5"
       arch: ppc64le
-     # env:
-     # - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
     - os: linux
-      dist: bionic
+      dist: xenial
       python: "3.6"
       arch: ppc64le
+ # bionic Tests
+    - os: linux
+      dist: bionic
+      python: "3.7"
+      arch: ppc64le
 
-allow_failures:
-    - python: "3.7"
+#allow_failures:
+#    - python: "3.7"
 
 env:
   - BOTO_CONFIG=/tmp/nowhere
