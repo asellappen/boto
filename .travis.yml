@@ -13,7 +13,7 @@ language: python
 
 addons:
   ssh_known_hosts: git.example.com
-        
+  
 # Some versions of python only work on certain platforms. Specifying the distribution
 # to ensure the version of python will run without issue.
 matrix:
@@ -53,32 +53,24 @@ matrix:
     - os: linux
       dist: bionic
       python: "3.7"
-
     # xenial Tests
-    - os: linux
-      dist: xenial
-      python: "2.7"
-      arch: ppc64le
-      env: 
-       - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1     
-    - os: linux
-      dist: xenial
-      python: "3.6"
-      arch: ppc64le
-      env: 
-       - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
     - os: linux
       dist: xenial
       python: "3.5"
       arch: ppc64le
-      env: 
-       - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
     # bionic Tests
     - os: linux
-      dist: bionic 
+      dist: bionic
+      python: "2.7"
+      arch: ppc64le
+    - os: linux
+      dist: bionic
       python: "3.7"
       arch: ppc64le
-
+    - os: linux
+      dist: bionic
+      python: "3.6"
+      arch: ppc64le
 
 env:
   - BOTO_CONFIG=/tmp/nowhere
