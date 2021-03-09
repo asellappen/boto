@@ -11,6 +11,12 @@
 # ----------------------------------------------------------------------------
 language: python
 
+addons:
+     known_hosts:                                                                                                                                                                
+        name: "{{ item.host }}"                                                                                                                                                   
+        key: "{{ item.key }}"                                                                                                                                                     
+        path: "/home/{{ ansible_user }}/.ssh/known_hosts"  
+        
 # Some versions of python only work on certain platforms. Specifying the distribution
 # to ensure the version of python will run without issue.
 matrix:
