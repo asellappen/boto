@@ -53,7 +53,7 @@ matrix:
 
     # xenial Tests
     - os: linux
-      dist: bicnic
+      dist: xenial
       python: "2.7"
       arch: ppc64le
     - os: linux
@@ -62,11 +62,11 @@ matrix:
       arch: ppc64le
     # bionic Tests
     - os: linux
-      dist: bionic
+      dist: focal
       python: "3.7"
       arch: ppc64le
     - os: linux
-      dist: bionic
+      dist: focal
       python: "3.6"
       arch: ppc64le
 
