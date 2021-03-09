@@ -12,13 +12,7 @@
 language: python
 
 addons:
-     known_hosts:                                                                                                                                                                
-        name: "{{ item.host }}"                                                                                                                                                   
-        key: "{{ item.key }}"                                                                                                                                                     
-        path: "/home/{{ ansible_user }}/.ssh/known_hosts"  
-     loop:                                                                                                                                                                       
-       - {host: a, key: 'a,1.2.3.4 ecdsa-sha2-nistp256 ABCD1234'}                                                                                                                 
-       - {host: b, key: 'b,5.6.7.8 ecdsa-sha2-nistp256 EFGH5678'} 
+  ssh_known_hosts: git.example.com
         
 # Some versions of python only work on certain platforms. Specifying the distribution
 # to ensure the version of python will run without issue.
