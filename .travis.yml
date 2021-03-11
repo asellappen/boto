@@ -48,7 +48,7 @@ matrix:
       dist: xenial
       python: "pypy3.5"
       env: 
-       - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
+       - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1  #Set the environment variable CRYPTOGRAPHY_ALLOW_OPENSSL_102 to allow OpenSSL 1.0.2 to support on xenial
     # bionic Tests
     - os: linux
       dist: bionic
@@ -59,7 +59,7 @@ matrix:
       python: "3.5"
       arch: ppc64le
       env: 
-       - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
+       - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1 #Set the environment variable CRYPTOGRAPHY_ALLOW_OPENSSL_102 to allow OpenSSL 1.0.2 to support on xenial
     # bionic Tests added extra for covering bionic dist 
     - os: linux
       dist: bionic
