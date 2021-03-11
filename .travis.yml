@@ -7,7 +7,7 @@
 # Maintainer          : Arumugam N S <asellappen@yahoo.com>/Priya Seth<sethp@us.ibm.com>
 #
 # Script License      : Apache License, Version 2 or later
-# Note                : travis file is picked from develop branch as this banch had lastes changes of yml files
+# Note                : travis file is picked from develop branch as this banch contains lastest changes of yml files
 # ----------------------------------------------------------------------------
 language: python
 
@@ -73,7 +73,8 @@ matrix:
       dist: bionic
       python: "3.6"
       arch: ppc64le
-
+  allow_failures:
+    - dist: trusty
 env:
   - BOTO_CONFIG=/tmp/nowhere
 
