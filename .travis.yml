@@ -7,7 +7,7 @@
 # Maintainer          : Arumugam N S <asellappen@yahoo.com>/Priya Seth<sethp@us.ibm.com>
 #
 # Script License      : Apache License, Version 2 or later
-#
+# Note                : travis file is picked from develop branch as this banch had lastes changes of yml files
 # ----------------------------------------------------------------------------
 language: python
 
@@ -60,7 +60,7 @@ matrix:
       arch: ppc64le
       env: 
        - export CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
-    # bionic Tests
+    # bionic Tests added extra for covering bionic dist 
     - os: linux
       dist: bionic
       python: "2.7"
